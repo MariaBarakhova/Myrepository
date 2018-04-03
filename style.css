@@ -1,1 +1,10 @@
 div{height: 300 px; background-color: greenyellow;}
+.firstdiv{background-color: indigo}
+.seconddiv {background-color: cornflowerblue}
+#thirddiv {/*background-color: blue*/}
+
+.activeSkyblue {background-color: skyblue !important;}
+
+#testId.thirddiv {background-color: red}
+.backblue {background-color: blue}
+.backblue.activered {display: block; background-color: red}
