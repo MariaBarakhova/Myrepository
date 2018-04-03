@@ -1,10 +1,16 @@
-div{height: 300 px; background-color: greenyellow;}
+div{height: 300 px; background-color: white;}
 .firstdiv{background-color: indigo}
 .seconddiv {background-color: cornflowerblue}
 #thirddiv {/*background-color: blue*/}
 
 .activeSkyblue {background-color: skyblue !important;}
 
-#testId.thirddiv {background-color: red}
+#testId.thirddiv {color: red}
 .backblue {background-color: blue}
 .backblue.activered {display: block; background-color: red}
+.backdiv .text span b {display: block; background-color: red}
+.backdiv3 .secondB {background-color: crimson}
+.div2 .h2 .spanRed {background-color: red}
+.h1.active .spanRed {color: indigo}
+.test {color: mediumorchid;}
+.test div > div {background-color: red}
