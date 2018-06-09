@@ -51,14 +51,35 @@ function test (a){
     console.log('hello function', a);
 }
 
-test (a); */
+test (a); 
 
 
 function sum (a,b) {
     return a + b;
 }
 var result = sum(2,2);
-console.log (result) ;
+console.log (result) ; 
 
+var name1 = 'name1';
+var name2 = 'name2';
+
+function names (name1, name2, ...rest) {
+    console.log(name1 + name2 + rest);
+}
+
+names ('name1', 'name2', 'name 4', 'name5'); 
+
+
+let sum = (a ,b) => a + b;
+
+alert (sum(5,5));
+
+/*либо. если длинная функция*/
+/*
+let sum = (a ,b) => {
+    return a + b;
+}
+
+alert (sum(5,5)); */
 
 
