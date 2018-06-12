@@ -1,6 +1,7 @@
 console.log('script');
 
-/*var userName = prompt ('who are you?');
+/* 09 06 2018 */ /*
+var userName = prompt ('who are you?');
 
 if (userName =='admin'){
     var userPass = prompt ('password');
@@ -60,8 +61,6 @@ function sum (a,b) {
 var result = sum(2,2);
 console.log (result) ; 
 
-
-
 var name1 = 'name1';
 var name2 = 'name2';
 
@@ -83,5 +82,120 @@ let sum = (a ,b) => {
 }
 
 alert (sum(5,5)); */
+
+
+/*/*  12 06 2018*/ /*
+
+var message = +prompt('Enter your number');
+
+var sum = 0;
+
+for (var i = 0; i < message; i++) {
+    sum +=i;
+}
+
+var message = +prompt('Enter your number');
+var secondNumber = +prompt('Enter your number');
+
+function getMinNumbers(a,b) {
+    if (a>b){
+
+    }else if (a<b){
+        alert('dfjjdhdg')
+    }
+}*/
+ 
+/*var age = prompt('enter number');
+
+function checkAge(age){
+if (age > 18){
+    return true;
+}
+    else {
+    return confirm ('выбери другой фильм');
+    }
+
+    if (checkAge(age)) {
+    alert ('qwerty');
+}
+    else {
+    alert ('njnjnj');
+}
+}
+
+var globalVar = 'test';
+
+var anon_func = function() {
+    var secretVar = 'textSecretVar';
+    alert ('Hey' + globalVar);
+}
+
+anon_func();
+
+
+
+(function(){
+    alert ('Hey' + globalVar); 
+})();
+
+
+
+setTimeout(function(){
+    console.log ('123')
+}, 3000);
+
+
+
+var name = 'kdldlfpgnrk';
+
+var result = name.length;
+
+console.log(result);
+
+
+console.log(parseInt('12px'));
+console.log(parseFloat('12.5px'));
+
+console.log(Math.floor(3.1));
+console.log(Math.ceil(3.1));
+console.log(Math.round(3.1));
+
+console.log(Math.random());
+
+
+
+var n = 'qwertyuiop';
+
+console.log(n.charAt(1));
+console.log(n[1]);
+
+
+
+var n = 'строка';
+console.log(n[1] + n[3] + n[5]);
+
+
+var n = 'строка';
+console.log(n.toUpperCase());
+console.log(n[2].toUpperCase());
+*/
+var m = 'This is строка';
+
+console.log(m.indexOf('This'));/*0-номер позиции(индекса)*/
+console.log(m.indexOf('Tis'));/*-1-не нашел*/
+console.log(m.indexOf(' is'));/*4-номер позиции(индекса)*/
+
+console.log(m.slice(2,4));/*от и до*/
+
+
+
+
+
+
+
+
+
+
+
 
 
