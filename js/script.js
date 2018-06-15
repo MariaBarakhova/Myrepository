@@ -179,23 +179,143 @@ var n = 'строка';
 console.log(n.toUpperCase());
 console.log(n[2].toUpperCase());
 */
-var m = 'This is строка';
+/*var m = 'This is строка';
 
 console.log(m.indexOf('This'));/*0-номер позиции(индекса)*/
-console.log(m.indexOf('Tis'));/*-1-не нашел*/
-console.log(m.indexOf(' is'));/*4-номер позиции(индекса)*/
+/*console.log(m.indexOf('Tis'));/*-1-не нашел*/
+/*console.log(m.indexOf(' is'));/*4-номер позиции(индекса)*/
 
-console.log(m.slice(2,4));/*от и до*/
+/*console.log(m.slice(2,4));/*от и до*/
 
-
-
-
+/*console.log(m.substr(2,4));*/
 
 
 
+/*var arrayList = ['test1', 2 , 'test2', 'test3'];
+
+console.log(arrayList.length - 1);
+
+for (var i = 0; i < arrayList.length; i++ ) {
+    if(arrayList[i] === 2){
+        console.log('есть2')
+    }
+console.log('array', arrayList[i]);
+}
+*/
+/*var arrayList = ['test1', 2 , 'test2', 'test3'];
+
+console.log(arrayList.length - 1);*/
+/*
+for (var i = 0; i < arrayList.length; i++ ) {
+    if(arrayList[i] === 2){
+        arrayList.push ('new element');
+        
+    }else if(arrayList[i] !== 3){
+        arrayList.pop();
+
+    }
+    console.log( arrayList);
+}*/
+
+/*var n = prompt('enter word');
+
+var arrayUser = [];
+
+if(arrayUser === 'admin') {
+    arrayUser.push ('arrayUser');
+} else if (arrayList !== 'admin'){
+    arrayUser.pop();
+}
+console.log (arrayUser);*/
+
+
+
+/*delete arrayList[0];
+console.log( arrayList);*/
+
+
+
+/*
+
+var arrayList2 = ['test1', 'test2' , 'test3', 'test4' , 'test5'];
+
+console.log (arrayList2.splice(2 , 2, 'new test', 'new test2'));
+console.log( arrayList2);
+*/
+
+    
+/*var list = prompt('enter word');
+
+var arrayList4 = ['fff', 'ddd', 'admin']
+
+if (list = arrayList4.indexOf('admin')){
+    delete arrayList4[2];
+    console.log (arrayList4);
+}else {
+    arrayList4.push('admin');
+}*/
 
 
 
 
 
+/*var message = prompt('enter word');
+var users = ['admin'];
+for (var i =0, i < users.length; i++) {
+    users.indexOf(message) ? users.pop(message) :users.push(message);
+    
+}*/
+
+
+
+/*var message = prompt('enter word');
+var users = ['admin', '2'];
+
+users.forEach (function (item, i , users) {
+    console.log (i + '=>' + item + 'вытащил из масства ' +users);
+});
+
+
+
+var message = prompt('enter word');
+var users = ['admin', '2'];
+
+users.forEach (function (item, i , users) {
+    console.log (`${i} ${item} вытащил из ${users}`);
+});
+*/
+
+
+var users = [1, 2, 5 , 6];
+
+var result = users.filter(function(item, id){
+    console.log('item', item, id);
+    
+});
+console.log(result);
+
+
+
+var users = [1, 2, 5 , 6];
+
+var result = users.filter(function(item){
+    return item > 3;
+    
+});
+console.log(result);
+
+
+var users = [1, 2, 5 , 6];
+
+var result = users.filter(item => {
+    return item > 3;
+});
+console.log(result);
+
+
+var users = [1, 2, 5 , 6];
+
+var result = users.filter(item => item > 3);
+
+console.log(result);
 
