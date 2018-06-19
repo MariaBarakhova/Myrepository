@@ -285,7 +285,7 @@ users.forEach (function (item, i , users) {
 });
 */
 
-
+/*
 var users = [1, 2, 5 , 6];
 
 var result = users.filter(function(item, id){
@@ -319,3 +319,100 @@ var result = users.filter(item => item > 3);
 
 console.log(result);
 
+
+//19.06.18
+
+var a =['1'];
+var b =[1];
+
+var result = a.concat(b);
+
+console.log(result.splice(2 , 1, 4, 5));
+console.log(result);
+*/
+
+//задача1
+//var numbers = [];
+//var result = 0;
+//while(true) {
+//    var value = prompt('enter your number');
+//    console.log (value);
+//    if(value === '' || value === null || isNaN(value)) break;
+//    numbers.push(+value);
+//}
+
+/*for(var i = 0; i < numbers.length; i++){
+console.log(numbers[i]);
+result += numbers[i];
+
+}
+console.log(result);
+*/
+// numbers.forEach (item => result += item);
+ //console.log(result);
+
+//задача2=========
+/*
+ var arr = ['user', 3, 4, 'a'];
+
+    function find(arr, str) {
+
+        return  arr.indexOf('a');
+    }
+   
+    console.log( find(arr, 'a'));
+*/
+/*
+    var arr = undefined;
+    function find(arr, str) {
+        if (arr ) {
+        var res = arr.indexOf(str);
+       }
+       else{
+        var res ='does not work';
+       }
+       return res;
+
+    }
+   
+    console.log( find(arr, 'a'));
+*/
+/*
+var arr = ['green', 'red', 'grey', 'pen'];
+
+var result = arr.filter(function(item) {
+   return item.length === 3;
+});
+console.log(result);
+*/
+/*
+var a = [1,2,3];
+var  b = [
+    [1, 2, 3],
+    [1, 2, 3],
+    [1, 2, 3],
+];
+console.log(b[0][1]);
+b[1].push('new el')
+console.log(b);
+console.log(b[1].length);
+*/
+/*
+var a = ['test1', 'test2'];
+var result = a.push ('new el');
+var result2 = a.splice(-2, 1, 'banana')
+
+//a[a.length - 2] = 'banana';
+console.log(a[0]);
+var res3 = a.shift();
+*/
+
+var a = 0;
+var arr = [1,9,3,7,5,0,2];
+
+arr.filter((item, id) => {
+    if(id % 2 && item % 2){
+        a++;
+    }
+});
+console.log(a);
