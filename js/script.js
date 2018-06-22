@@ -407,7 +407,7 @@ console.log(a[0]);
 var res3 = a.shift();
 */
 
-var a = 0;
+/*var a = 0;
 var arr = [1,9,3,7,5,0,2];
 
 arr.filter((item, id) => {
@@ -416,3 +416,88 @@ arr.filter((item, id) => {
     }
 });
 console.log(a);
+*/
+
+
+//22.06.18
+
+/*
+var test = {
+    q1: 'value',
+};
+var arr =[
+    {
+    q1: 'value', 
+    }
+];
+console.log(arr[0].q1 = 'naw value');
+
+var test = {
+    q1: 'value',
+    q2: 'value2',
+};
+for(var key in test) {
+    console.log(`key => ${key}  value:  ${test[key]}`);
+    
+}
+console.log(Object.keys(test));
+console.log(Object.keys(test).length);
+*/
+
+
+
+/*
+var test = {
+    q1: 'value',
+    colors: 'red',
+};
+test.q3 ='ddffd';
+
+var link = test;
+
+link.q1 = '123';
+console.log(link);
+console.log(test.q1);
+*/
+
+/*
+var test2 = {
+    q1: 'value',
+    color: 'red',
+    getName: function() {
+    console.log('321', this.color);
+
+    }
+};
+test2.getName();
+console.log(test2.q1);
+*/
+
+
+
+function name() {
+    console.log ('Fname', this )
+}
+
+var test2 = {
+    title: 'All colors',
+    colors: ['red','blue','white'],
+    showList: function() {
+        this.colors.forEach(
+            colors => console.log(this.title + colors)
+        )
+        
+    }
+};
+test2.showList();
+
+
+
+
+
+
+
+
+
+
+
