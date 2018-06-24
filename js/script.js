@@ -473,7 +473,7 @@ test2.getName();
 console.log(test2.q1);
 */
 
-
+/*
 
 function name() {
     console.log ('Fname', this )
@@ -490,14 +490,102 @@ var test2 = {
     }
 };
 test2.showList();
+*/
 
 
+//24.06.18
+
+//Задача1. вывести сумму всех юзеров
+/*
+var users = {
+    vasya:100,
+    petya:200,
+    petya2:200,
+};
+
+var sum = 0;
+
+for(var name in users) {
+    sum += users[name];   
+}
+console.log(sum);
+*/
 
 
+//Задача2. вывести максимальное значение
+/*
+var users = {
+    vasya:100,
+    petya:400,
+    petya2:200,
+};
+var result = 0;
+
+for(var key in users) {
+    if(result < users[key]){
+        result = users[key];
+        
+    }   
+}
+console.log(result);
+*/
 
 
+//Задача3. умножить все объекты на 2
+/*
+var users = {
+    vasya:100,
+    petya:400,
+    petya2:200,
+};
+var result = 0;
 
+for(var key in users) {
+   users[key] *= 2;
+   console.log(users[key]);
+}
+*/
 
+//Задача4. проверить , если не число, то не умножать
+/*
+var sum = [];
+var users = {
+    vasya:100,
+    petya:'jjh',
+    petya2:200,
+};
+
+function isSum(obj){
+    for(var key in obj) {
+      if(typeof obj[key] === 'number') {
+        obj[key] *= 2;
+        sum.push(obj[key]); 
+     }
+    }
+}
+
+isSum(users);
+
+console.log(sum);
+*/
+
+//Задача5. выбрать значение ключа test2. должно выводить - value2
+/*
+var arr = [
+    {key: 'test', value: 'value1'},
+    {key: 'test2', value: 'value2'},
+    {key: 'test3', value: 'value3'},
+]
+var values = [];
+function isResult(arr, search) {
+arr.forEach((value, elem) => {
+    //console.log(arr[elem].key + '=>' + elem);
+     arr[elem].key === search && values.push(value.value);
+});
+}
+isResult(arr, 'test2');
+console.log(values);
+*/
 
 
 
