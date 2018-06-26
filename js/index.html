@@ -5,19 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JS</title>
+    <!--<script src="script2.js"></script>-->
     <!--<script src="script.js"></script>-->
-    <script src="script.js"></script>
+   
     <!-- <script>
     function test1(a){
         console.log (a);
     }
     </script> -->
-    
+    <style>
+    .head {
+        display: flex;
+    }
+    .head a {
+        padding: 10px 15px;
+        border-radius: 3px;
+        display: block;
+        font-size: 16px;
+        color: black;
+        text-decoration: underline;
+        outline: none;
+        border: 3px solid gray;
+    }
+    .tabs{
+        padding: 15px;
+    }
+    .tab{
+        display: none;
+    }
+    .tab.show{
+        display: block;
+    }
+
+
+    </style>
+
+
 </head>
 <body>
    <!-- <button onclick="test1 ('myName')">
        button
    </button> -->
     
+   <div class="container">
+       <div class="head">
+           <a href="#">1</a>
+           <a href="#">2</a>
+           <a href="#">3</a>
+
+       </div>
+       <div class="tabs">
+        <div class="tab show">
+            <h1>1</h1>
+        </div>
+        <div class="tab">
+            <h1>2</h1>
+        </div>
+        <div class="tab">
+            <h1>3</h1>
+        </div>
+       </div>
+   </div>
+   <script src="js.js"></script>
 </body>
 </html>

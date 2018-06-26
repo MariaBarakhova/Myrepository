@@ -1,4 +1,4 @@
-console.log('script');
+//console.log('script');
 
 /* 09 06 2018 */ /*
 var userName = prompt ('who are you?');
@@ -588,4 +588,64 @@ console.log(values);
 */
 
 
+//26.06.18
+/*
+var info = "[0,1,2,3]";
 
+var result = JSON.parse(info);
+console.log(result);
+
+
+
+
+var info = '{"name":"ddfv", "age": "23", "logined":"jgjg"}';
+
+var result = JSON.parse(info);
+console.log(result);
+
+
+
+var info = {
+    name:"ddfv", 
+    age: "31",
+    test:['1']
+};
+
+var result = JSON.stringify(info);
+console.log(result);
+
+
+var test = fetch('https://jsonplaceholder.typicode.com/posts/')
+.then(response => response.json())
+.then(json => console.log(json.slice(0,10)))
+console.log(test);
+
+//достать имена(title) из массива
+var test = fetch('https://jsonplaceholder.typicode.com/posts/')
+.then(response => response.json())
+.then(json => getPosts(json.slice(0,10)))
+
+getPosts = data => {
+    data.map(item =>{
+        console.log(item.title);
+    })
+}
+*/
+
+
+
+
+var navItem = document.querySelector('.head a');
+var tabItem = document.querySelector('.tab');
+
+document.querySelector('.head').onclick = function(e) {
+    var target = e.target;
+    for (var i = 0; i < navItem.lenght; i++){
+        console.log(navItem[i]);
+    }
+    console.log(target);
+}
+
+showContent (index) {
+    
+}
