@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         var user = {
+//   name:'vasya',
+//   getLastName: function() {
+//     console.log(this.name);
+//   }
+// }
+
+// function user(name) {
+ 
+//   this.name = 'vasya';
+//   return {name:'test'};
+//   console.log(this.name);
+// }
+// console.log(new user().name);
+
+// var result = new user('vasya');
+// var result = new user('vasya');
+// var result = new user('vasya');
+
+
+class First {
+    constructor(name){
+        this.name = name;
+    } 
+    speak(){
+        console.log('I speak ' + this.name)
+    }
+}
+
+class Test extends First {
+    speak(){
+        super.speak();
+        console.log('hjhgjyhg');
+    }
+}
+
+new Test ('vasya').speak();
+
+
+
+
+    </script>
+
+
+</body>
+</html>
