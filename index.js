@@ -1,13 +1,38 @@
 import React, { Component } from 'react';
 
-import SearInput from '../../components/SearchInput';
-import UsersList from '../../components/UsersList';
-import ActiveUser from '../../components/ActiveUser';
+// import SearInput from '../../components/SearchInput';
+// import UsersList from '../../components/UsersList';
+// import ActiveUser from '../../components/ActiveUser';
+
+import {
+  SearInput,
+  UsersList,
+  ActiveUser,
+  DropDown,
+} from '../../components';
+
+import {COLORS} from '../../assets';
+
+
+
+import Modal from '../../components/Modal';
 
 import data from '../../data.txt';
 import logo from '../../logo.svg';
 import '../../App.css';
 import ItemUser from '../../components/ItemUser';
+
+const listDropDowns = [
+  {
+    name: 'button 1',
+  },
+  {
+    name: 'button 2',
+  },
+  {
+    name: 'button 3',
+  },
+];
 
 
 export default class Home extends Component {
@@ -18,20 +43,19 @@ export default class Home extends Component {
       activeUser: null,
       currentPage: 0,
       listPages: null,
-      isShowContent: false,
       isErrorUser: false,
+      isShowModal: false,
+      listDropDowns,
     };
   }
-
 
   componentWillMount() {
     fetch(data)
     .then(response => response.json())
     .then(data => {
-      this.initialData = data;
       this.setState({
         defaultUsers: [...data],
-        data: this.initialData,
+        data,
         activeUser: data[0],
       });
     })
@@ -43,25 +67,16 @@ export default class Home extends Component {
       this.setState({
         isErrorUser: true,
       })
-    }
-    else{
+    } else {
       this.setState({
         isErrorUser: false,
-      })
+      });
     }
-    console.log(config);
-  }
-
-  toggleContent = () => {
-    this.setState({
-      isShowContent: !this.state.isShowContent
-    });
   }
 
   search = (e) => {
-    console.log(e.target);
     const value = e.target.value.toLowerCase();
-    const fillter = this.initialData.filter(user => {
+    const fillter = this.state.defaultUsers.filter(user => {
       return user.name.toLowerCase().includes(value);
     });
     this.updateApp({
@@ -69,25 +84,18 @@ export default class Home extends Component {
       currentPage: 0,
     });
   }
-
-  sort = (type) =>{
+  
+  sort = (type) => {
     const { data } = this.state;
     const dataUsers = data;
-    const sorted = dataUsers.sort((a, b)=> {
+    const sorted = dataUsers.sort((a, b) => {
       return a[type] > b[type] ? 1 : -1;
     });
-this.setState({
-  data: sorted,
-})
-    console.log('sorted', sorted);
-  }
-  reset = () => {
-    this.updateApp({
-      data: this.state.defaultUsers,
-      activeUser: this.state.defaultUsers[0],
+    this.setState({
+      data: sorted,
     });
   }
-  
+
   splitUsers = () => {
     const {
       data,
@@ -95,7 +103,6 @@ this.setState({
     } = this.state;
     return data && data.slice(currentPage * 15, currentPage * 15 + 15);
   }
-
   
   handlePagitaion = (number) => {
     const { currentPage, data } = this.state;
@@ -108,14 +115,47 @@ this.setState({
     }
   }
 
+  reset = () => {
+    this.updateApp({
+      data: this.state.defaultUsers,
+      activeUser: this.state.defaultUsers[0],
+    });
+  }
+
+  closeModal = () => {
+    console.log('ghg');
+    this.setState({
+      isShowModal: false,
+    });
+  }
+
+  openModal = () => {
+    this.setState({
+      isShowModal: true,
+    });
+  }
+
+  isContentDropDown = (item, index) => {
+    const listDropDowns = [...this.state.listDropDowns];
+    listDropDowns[index].isOpen = !listDropDowns[index].isOpen;
+   this.setState({
+    listDropDowns,
+   });
+  }
+
+
+
   render() {
-    console.log('listPages',this.state.listPages);
-    console.log('currentPage',this.state.currentPage);
+    console.log('fgf', this.state.listDropDowns);
     const buttonsList = [
+      {
+        name: 'Modal',
+        icon: 'fa-users',
+        onClick: this.openModal,
+      },
       {
         name: 'Name',
         icon: 'fa-users',
-        onClick: this.test,
         onClick: () => this.sort('name'),
       },
       {
@@ -126,56 +166,44 @@ this.setState({
       {
         name: 'Reset',
         icon: 'fa-ban',
-        onClick:() => console.log('222'),
+        onClick: this.reset,
       },
     ];
-
-
-    const test1 = [
-      {
-        name: 'Ann',
-        age: '25',
-        
-      },
-      {
-        name: 'Jane',
-        age: '26',
-        
-      },
-    ];
-
-
     const {
       data,
       listPages,
       currentPage,
       isErrorUser,
+      isShowModal,
     } = this.state;
     return (
+
       <div className='home'>
+
+      <div>
+        {
+          listDropDowns.map((item, index) =>
+          <DropDown 
+          key={index}
+          title={item.name}
+          isOpenDropDown={item.isOpen}
+          isContentDropDown = {() => this.isContentDropDown()}
+          />
+        )
+        }
+      </div>
+
        <header className={`App-header ${this.state.isHeaderClass ? 'red' : ''}`}>
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
 
-          <button className='btn btn-primary'  
-           onClick={this.toggleContent}>
-            button
-          </button>
-
-        {
-          this.state.isShowContent && test1.map(item => {
-         return (<div>
-              {item.name} {item.age}
-          </div>
-            )
-          })
-        }
-
-
+        <Modal
+        closeModal={this.closeModal}
+        isShowModal={isShowModal}
+        />
 
         <div className="home__header">
-
           <SearInput
             isError={data && data.length === 0}
             searchValue={this.search}
@@ -193,8 +221,7 @@ this.setState({
                 <p className='btnName'>
                   {item.name}
                 </p>
-              </button>
-            )
+              </button>)
             }
           </div>
         </div>
@@ -202,7 +229,7 @@ this.setState({
           <div className="home__sidebar">
             <div className='sidebar'>
               <ActiveUser
-              isError={isErrorUser}
+                isErrorUser={isErrorUser}
                 user={this.state.activeUser}
               />
             </div>
@@ -224,4 +251,3 @@ this.setState({
     );
   }
 }
-
